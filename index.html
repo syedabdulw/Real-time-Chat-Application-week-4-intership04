@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-time Chat Application</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginContainer" class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <i class="fas fa-comments login-logo"></i>
+                <h1 class="login-title">Real-time Chat</h1>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" id="username" class="form-input" placeholder="Enter your username" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Join Chat</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Chat Application -->
+    <div id="chatApp" class="chat-app">
+        <div class="chat-container">
+            <!-- Sidebar -->
+            <div class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h2 class="sidebar-title">
+                        <i class="fas fa-comments"></i>
+                        Chat Room
+                    </h2>
+                </div>
+                <div class="user-info">
+                    <div class="user-avatar" id="currentUserAvatar">U</div>
+                    <div class="user-details">
+                        <div class="user-name" id="currentUserName">User</div>
+                        <div class="user-status">
+                            <span class="status-indicator"></span>
+                            Online
+                        </div>
+                    </div>
+                </div>
+                <div class="online-users">
+                    <div class="online-users-title">Online Users</div>
+                    <div id="onlineUsersList">
+                        <!-- Online users will be added here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Chat Area -->
+            <div class="chat-main">
+                <div class="chat-header">
+                    <div class="chat-room-info">
+                        <button class="menu-toggle" id="menuToggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <h3 class="chat-room-title">General Room</h3>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="chat-action" title="Search">
+                            <i class="fas fa-search"></i>
+                        </button>
+                        <button class="chat-action" title="Settings">
+                            <i class="fas fa-cog"></i>
+                        </button>
+                        <button class="chat-action" id="logoutBtn" title="Logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Messages Container -->
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Messages will be added here -->
+                </div>
+
+                <!-- Typing Indicator -->
+                <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                    <span id="typingUser">Someone</span> is typing
+                    <div class="typing-dots">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+
+                <!-- Message Input -->
+                <div class="message-input-container">
+                    <div class="message-input-wrapper">
+                        <input type="text" id="messageInput" class="message-input" placeholder="Type a message...">
+                        <button id="sendButton" class="send-button">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <script src="script.js"></script>  
+</body>
+</html>
